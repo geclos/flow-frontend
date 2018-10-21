@@ -1,0 +1,14 @@
+@import 'styles/fonts.scss';
+@import 'styles/colors.scss';
+
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .title {
+    @include font-size(4);
+    font-weight: bold;
+    color: $brand;
+  }
+}
