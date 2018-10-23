@@ -1,0 +1,14 @@
+@import 'styles/colors.scss';
+@import 'styles/fonts.scss';
+
+.root {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+
+  .message {
+    @include font-size(5);
+    color: $grey2;
+  }
+}

@@ -12,6 +12,8 @@ class App extends Component {
         <Header />
       </div>
     )
+
+    // TODO: add routes
   }
 }
 
