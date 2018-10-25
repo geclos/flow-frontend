@@ -1,4 +1,3 @@
-import Header from '../Header'
 import React, { Component } from 'react'
 
 import styles from './App.module.scss'
@@ -8,9 +7,7 @@ import styles from './App.module.scss'
 class App extends Component {
   render() {
     return (
-      <div className={styles.root}>
-        <Header />
-      </div>
+      <div className={styles.root} />
     )
 
     // TODO: add routes

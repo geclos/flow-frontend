@@ -3,7 +3,7 @@ import User from '../models/User'
 
 class Users extends Collection {
   url () {
-    return '/core/users'
+    return '/users'
   }
 
   model () {

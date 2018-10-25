@@ -3,7 +3,7 @@ import Employee from '../models/Employee'
 
 class Employees extends Collection {
   url () {
-    return '/core/employees'
+    return '/employees'
   }
 
   model () {
