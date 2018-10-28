@@ -1,0 +1,45 @@
+@import 'styles/colors';
+@import 'styles/fonts';
+
+.root {
+  @include font-size(5);
+  font-weight: 600;
+
+  border-radius: 5px;
+  border: 2px solid transparent;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  display: block;
+  font-family: $font-family;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+
+  &.smaller {
+    height: 30px;
+    padding: 3px 13px;
+  }
+
+  &.small {
+    height: 40px;
+    padding: 8px 20px;
+  }
+
+  &.medium {
+    height: 50px;
+    padding: 13px 23px;
+  }
+
+  &.brand {
+    background: $brand;
+    color: white;
+
+    &.outline {
+      color: $brand;
+      background: white;
+      border: 1px solid $brand;
+    }
+  }
+}

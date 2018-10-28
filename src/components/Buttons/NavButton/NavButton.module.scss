@@ -1,0 +1,28 @@
+@import 'styles/colors';
+@import 'styles/fonts';
+
+.root {
+  align-items: center;
+  background: transparent;
+  border: none;
+  color: $grey4;
+  display: inline-flex;
+  font-weight: bold;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+
+  &:hover, &.active {
+    color: $grey1;
+    border-color: $brand;
+  }
+
+  &.medium {
+    @include font-size(4);
+  }
+
+  &.small {
+    @include font-size(5);
+  }
+}

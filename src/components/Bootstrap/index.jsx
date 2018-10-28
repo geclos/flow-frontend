@@ -1,3 +1,4 @@
+import { withRouter } from 'react-router'
 import { observer } from 'mobx-react'
 import employees from '../../stores/collections/employees'
 import ErrorFallback from '../ErrorFallback'
@@ -46,4 +47,4 @@ class Bootstrap extends Component<Props, State> {
   }
 }
 
-export default observer(Bootstrap)
+export default withRouter(observer(Bootstrap))
