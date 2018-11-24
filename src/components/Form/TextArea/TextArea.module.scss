@@ -1,0 +1,14 @@
+@import 'styles/fonts';
+@import 'styles/colors';
+
+.root {
+  @include font-size(4);
+  border-radius: 5px;
+  border: 1px solid $grey4;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: $grey1;
+  outline: none;
+  padding: 15px;
+  width: 100%;
+}
