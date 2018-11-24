@@ -10,5 +10,10 @@
   .message {
     @include font-size(5);
     color: $grey2;
+
+    .link {
+      color: $grey1;
+      text-decoration: underline;
+    }
   }
 }

@@ -1,9 +1,9 @@
 import { withRouter } from 'react-router'
 import { observer } from 'mobx-react'
-import employees from '../../stores/collections/employees'
-import ErrorFallback from '../ErrorFallback'
+import employees from 'stores/collections/employees'
+import ErrorFallback from 'components/ErrorFallback'
 import React, { Component } from 'react'
-import users from '../../stores/collections/users'
+import users from 'stores/collections/users'
 
 type Props = {
   children: React.Node
@@ -31,7 +31,8 @@ class Bootstrap extends Component<Props, State> {
         users.fetch(),
         employees.fetch()
       ])
-    } catch (e) {
+    } catch (error) {
+      console.error(error, JSON.stringify(error))
       this.setState({ error: true })
     } finally {
       this.setState({ loading: false })

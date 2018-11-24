@@ -1,7 +1,7 @@
 // @flow
-import jqueryAdapter from 'mobx-rest-jquery-adapter'
-import { apiClient } from 'mobx-rest'
 import { API_ENDPOINT } from '../config/variables'
+import { apiClient } from 'mobx-rest'
+import jqueryAdapter from 'mobx-rest-jquery-adapter'
 
 if (!API_ENDPOINT) {
   throw new Error('undefined API_ENDPOINT')
