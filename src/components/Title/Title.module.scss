@@ -1,0 +1,32 @@
+@import 'styles/fonts';
+@import 'styles/colors';
+
+.root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &.centered {
+    align-items: center;
+  }
+
+  .title {
+    @include font-size(3);
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .description {
+    @include font-size(4);
+    color: $grey3;
+    text-align: center;
+  }
+
+  .separator {
+    width: 20px;
+    height: 2px;
+    background: $brand;
+    border-radius: 1px;
+    margin: 20px 0 40px;
+  }
+}

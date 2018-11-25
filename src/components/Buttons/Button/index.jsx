@@ -6,26 +6,36 @@ import React, { Component } from 'react'
 import styles from './Button.module.scss'
 
 type Props = {
-  to?: string,
+  children: React.Node,
+  disabled?: boolean,
   href?: string,
   onClick?: () => {},
-  children: React.Node,
-  type: 'brand',
+  outline?: boolean,
   size: 'medium' | 'small' | 'smaller',
-  outline?: boolean
+  to?: string,
+  type: 'brand'
 }
 
 const cx = cn.bind(styles)
 
 export default class LinkButton extends Component<Props> {
   static defaultProps = {
-    size: 'medium',
     outline: false,
+    size: 'medium',
     type: 'brand'
   }
 
   render () {
-    const { children, to, href, onClick, size, type, outline } = this.props
+    const {
+      disabled,
+      children,
+      to,
+      href,
+      onClick,
+      size,
+      type,
+      outline
+    } = this.props
 
     if (to) {
       return (
@@ -44,7 +54,11 @@ export default class LinkButton extends Component<Props> {
     }
 
     return (
-      <button className={cx('root', size, type, { outline })} onClick={onClick}>
+      <button
+        onClick={onClick}
+        disabled={disabled}
+        className={cx('root', size, type, { outline, disabled })}
+      >
         {children}
       </button>
     )

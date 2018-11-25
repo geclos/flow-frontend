@@ -1,0 +1,65 @@
+@import 'styles/colors';
+@import 'styles/fonts';
+
+.tableContainer {
+  overflow: hidden;
+  border-radius: 5px;
+  border: 1px solid $grey4;
+
+  .header {
+    align-items: center;
+    background: $grey5;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-bottom: 1px solid $grey4;
+
+    .title {
+      @include font-size(6);
+      color: $grey3;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+
+  .table {
+    .header {
+      @include font-size(6);
+      border-bottom: 1px solid $grey4;
+
+      color: $grey3;
+      font-weight: 500;
+      text-transform: uppercase;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+
+      padding: 15px 20px;
+    }
+
+    .row {
+      @include font-size(4);
+
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+
+      border-bottom: 1px solid $grey4;
+      padding: 25px 20px;
+
+      &:first-child {
+        border-top: 1px solid $grey4;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    .element {
+      min-width: 25%;
+      text-align: left;
+    }
+  }
+}

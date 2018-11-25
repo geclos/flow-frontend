@@ -12,7 +12,7 @@ type Props = {
 
 const cx = cn.bind(styles)
 
-export default class LinkButton extends Component {
+export default class LinkButton extends Component<Props> {
   static defaultProps = {
     size: 'medium'
   }

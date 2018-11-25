@@ -1,3 +1,5 @@
+import { API_ENDPOINT } from 'config/variables'
+import $ from 'jquery'
 import Button from '../Buttons/Button'
 import cn from 'classnames/bind'
 import NavButton from '../Buttons/NavButton'
@@ -8,6 +10,17 @@ import styles from './Header.module.scss'
 const cx = cn.bind(styles)
 
 export default class Header extends Component {
+  logout () {
+    $.ajax({
+      url: `${API_ENDPOINT}/sessions`,
+      type: 'DELETE',
+      crossDomain: true,
+      xhrFields: { withCredentials: true }
+    }).done(() =>
+      window.location = API_ENDPOINT
+    )
+  }
+
   render () {
     return (
       <div className={styles.root}>
@@ -17,7 +30,7 @@ export default class Header extends Component {
               iFlow
             </div>
             <div>
-              <Button outline size='smaller' to='/'>
+              <Button outline size='smaller' onClick={this.logout}>
                 Logout
               </Button>
             </div>
