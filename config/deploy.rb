@@ -41,7 +41,7 @@ set :deploy_to, "/srv/frontend"
 namespace :deploy do
   after :finishing, :build do
     on roles(:web) do
-      execute :npm, 'run build'
+      execute "cd '#{release_path}'; npm run build"
     end
   end
 end
