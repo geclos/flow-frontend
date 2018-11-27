@@ -39,9 +39,7 @@ set :deploy_to, "/srv/frontend"
 # set :ssh_options, verify_host_key: :secure
 
 namespace :deploy do
-  task :build_deploy do
-    on roles(:web) do
-      execute :npm, 'run build'
-    end
+  after :finishing, :build do
+    execute :npm, 'run build'
   end
 end
