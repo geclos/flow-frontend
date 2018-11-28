@@ -1,4 +1,4 @@
-import { API_ENDPOINT } from 'config/variables'
+import { API_LOCATION } from 'config/variables'
 import $ from 'jquery'
 import Button from '../Buttons/Button'
 import cn from 'classnames/bind'
@@ -12,12 +12,12 @@ const cx = cn.bind(styles)
 export default class Header extends Component {
   logout () {
     $.ajax({
-      url: `${API_ENDPOINT}/sessions`,
+      url: `${API_LOCATION}/sessions`,
       type: 'DELETE',
       crossDomain: true,
       xhrFields: { withCredentials: true }
     }).done(() =>
-      window.location = API_ENDPOINT
+      window.location = API_LOCATION
     )
   }
 

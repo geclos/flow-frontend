@@ -1,15 +1,15 @@
 // @flow
-import { API_ENDPOINT } from '../config/variables'
+import { API_LOCATION } from '../config/variables'
 import { apiClient } from 'mobx-rest'
 import jqueryAdapter from 'mobx-rest-jquery-adapter'
 
-if (!API_ENDPOINT) {
-  throw new Error('undefined API_ENDPOINT')
+if (!API_LOCATION) {
+  throw new Error('undefined API_LOCATION')
 }
 
 export default () => {
   apiClient(jqueryAdapter, {
-    apiPath: API_ENDPOINT,
+    apiPath: API_LOCATION,
     commonOptions: {
       xhrFields: {
         withCredentials: true
