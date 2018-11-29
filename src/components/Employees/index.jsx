@@ -1,4 +1,5 @@
 // @flow
+import { Button } from 'components/Buttons'
 import BlankSlate from 'components/BlankSlate'
 import employees from 'stores/collections/employees'
 import InviteEmployeesModal from './modals/InviteEmployees'
@@ -17,7 +18,7 @@ export default class Employees extends Component<Props> {
     return <InviteEmployeesModal closeModal={toggle(false)} />
   }
 
-  renderBlankSlate () {
+  renderBlankSlate (toggle: Function) {
     return (
       <BlankSlate>
         <Title
@@ -26,12 +27,19 @@ export default class Employees extends Component<Props> {
           separator
           centered
         />
+      <div className={styles.btnContainer}>
+        <div className={styles.btn}>
+          <Button onClick={toggle(true)}>
+            Add employees +
+          </Button>
+        </div>
+      </div>
       </BlankSlate>
     )
   }
 
   renderContent (toggle: Function) {
-    if (!employees.models.length) return this.renderBlankSlate()
+    if (!employees.models.length) return this.renderBlankSlate(toggle)
     return <Table openModal={toggle(true)} />
   }
 

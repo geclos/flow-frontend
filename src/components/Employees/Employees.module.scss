@@ -1,1 +1,10 @@
-.root {}
+.root {
+  .btnContainer {
+    display: flex;
+    justify-content: center;
+
+    .btn {
+      max-width: 200px;
+    }
+  }
+}
