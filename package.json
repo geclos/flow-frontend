@@ -41,6 +41,7 @@
     "mobx-react": "^5.3.4",
     "mobx-rest": "^2.2.5",
     "mobx-rest-jquery-adapter": "^1.0.2",
+    "moment": "^2.22.2",
     "node-sass": "^4.9.4",
     "optimize-css-assets-webpack-plugin": "5.0.1",
     "pnp-webpack-plugin": "1.1.0",

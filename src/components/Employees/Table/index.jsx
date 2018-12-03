@@ -3,6 +3,7 @@ import { Button } from 'components/Buttons'
 import { observer } from 'mobx-react'
 import { Pane, Pad } from 'components/Layout'
 import employees from 'stores/collections/employees'
+import moment from 'moment'
 import React from 'react'
 
 import styles from './Table.module.scss'
@@ -47,7 +48,7 @@ class Table extends React.Component<Props> {
                     {employee.user.get('email')}
                   </div>
                   <div className={styles.element}>
-                    {employee.get('form_sent_at')}
+                    {moment(employee.get('form_sent_at')).format('DD/MM/YYYY')}
                   </div>
                 </div>
               )}
