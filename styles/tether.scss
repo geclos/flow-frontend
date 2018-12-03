@@ -1,0 +1,26 @@
+@mixin animation($fromX, $toX, $fromY, $toY) {
+  from {
+    opacity: 0;
+    transform: scale3d(.6, .6, .6) translateY($fromY) translateX($fromX);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1) translateY($toY) translateX($toX);
+  }
+}
+
+:global {
+  @keyframes popoverLeftRight {
+    @include animation(-60px, 0, 0, 0);
+  }
+  @keyframes popoverRightLeft {
+    @include animation(60px, 0, 0, 0);
+  }
+  @keyframes popoverTopBottom {
+    @include animation(0, 0, -60px, 0);
+  }
+  @keyframes popoverBottomTop {
+    @include animation(0, 0, 60px, 0);
+  }
+}

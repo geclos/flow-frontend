@@ -1,0 +1,10 @@
+@import 'styles/colors';
+@import 'styles/fonts';
+
+.label {
+  @include font-size(5);
+  color: $grey1;
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+}

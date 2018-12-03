@@ -1,0 +1,256 @@
+@import 'styles/colors';
+@import 'styles/fonts';
+@import 'styles/tether';
+
+$arrow_size: 8px;
+$arrow_padding: 12px;
+
+.popover {
+  animation-duration: .2s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+  position: relative;
+  text-align: center;
+  min-width: 280px;
+  outline: none;
+
+  .popoverContent {
+    box-shadow: 0 5px 15px rgba($grey1, .1), 0 10px 30px rgba($grey1, .1), 0 0 100px rgba($grey1,.1);
+    border-radius: 10px;
+    overflow: hidden;
+    background: white;
+    &.overflowContent {
+      overflow: visible;
+    }
+  }
+
+  .arrow {
+    content: "";
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    transform: rotate(45deg);
+    border-radius: 20px 0 5px 0;
+    background: white;
+
+    &.brand {
+      background: $brand;
+    }
+  }
+}
+
+:global {
+  .tether-element {
+    z-index: 1;
+
+    /**
+     *
+     *   +---+ P
+     *   |   |
+     *   +---+
+     */
+    &.tether-element-attached-top.tether-element-attached-left.tether-target-attached-right :local(.popover) {
+      left: $arrow_size * 2;
+      top: -$arrow_size * 2 - $arrow_padding;
+      :local { animation-name: popoverLeftRight; }
+
+      :local(.arrow) {
+        left: -$arrow_size;
+        top: $arrow_size + $arrow_padding;
+        transform: rotate(135deg);
+      }
+    }
+
+    /**
+     *
+     *   +---+
+     *   |   | P
+     *   +---+
+     */
+    &.tether-element-attached-left.tether-element-attached-middle :local(.popover) {
+      left: $arrow_size * 2;
+      :local { animation-name: popoverLeftRight; }
+
+      :local(.arrow) {
+        left: -$arrow_size;
+        bottom: calc(50% - #{$arrow_size});
+        transform: rotate(135deg);
+      }
+    }
+
+    /**
+     *
+     *   +---+
+     *   |   |
+     *   +---+ P
+     */
+    &.tether-element-attached-bottom.tether-element-attached-left.tether-target-attached-right :local(.popover) {
+      left: $arrow_size * 2;
+      bottom: -$arrow_size * 2 - $arrow_padding;
+      :local { animation-name: popoverLeftRight; }
+
+      :local(.arrow) {
+        left: -$arrow_size;
+        bottom: $arrow_size + $arrow_padding;
+        transform: rotate(135deg);
+      }
+    }
+
+    /**
+     *   +---+
+     *   |   |
+     *   +---+
+     *       P
+     */
+    &.tether-element-attached-top.tether-element-attached-right.tether-target-attached-bottom :local(.popover) {
+      top: $arrow_size * 2;
+      right: -$arrow_size * 2 - $arrow_padding;
+      :local { animation-name: popoverTopBottom; }
+
+      :local(.arrow) {
+        top: -$arrow_size;
+        right: $arrow_size + $arrow_padding;
+        transform: rotate(-135deg);
+      }
+    }
+
+    /**
+     *   +---+
+     *   |   |
+     *   +---+
+     *     P
+     */
+    &.tether-element-attached-top.tether-element-attached-center :local(.popover) {
+      top: $arrow_size * 2;
+      :local { animation-name: popoverTopBottom; }
+
+      :local(.arrow) {
+        top: -$arrow_size;
+        left: calc(50% - #{$arrow_size});
+        transform: rotate(-135deg);
+      }
+    }
+
+    /**
+     *   +---+
+     *   |   |
+     *   +---+
+     *   P
+     */
+    &.tether-element-attached-top.tether-element-attached-left.tether-target-attached-bottom :local(.popover) {
+      top: $arrow_size * 2;
+      left: -$arrow_size * 2 - $arrow_padding;
+      :local { animation-name: popoverTopBottom; }
+
+      :local(.arrow) {
+        top: -$arrow_size;
+        left: $arrow_size + $arrow_padding;
+        transform: rotate(-135deg);
+      }
+    }
+
+    /**
+     *   +---+
+     *   |   |
+     * P +---+
+     */
+    &.tether-element-attached-bottom.tether-element-attached-right.tether-target-attached-left :local(.popover) {
+      right: $arrow_size * 2;
+      bottom: -$arrow_size * 2 - $arrow_padding;
+      :local { animation-name: popoverRightLeft; }
+
+      :local(.arrow) {
+        right: -$arrow_size;
+        bottom: $arrow_size + $arrow_padding;
+        transform: rotate(-45deg);
+      }
+    }
+
+    /**
+     *   +---+
+     * P |   |
+     *   +---+
+     */
+    &.tether-element-attached-right.tether-element-attached-middle :local(.popover) {
+      right: $arrow_size * 2;
+      :local { animation-name: popoverRightLeft; }
+
+      :local(.arrow) {
+        right: -$arrow_size;
+        bottom: calc(50% - #{$arrow_size});
+        transform: rotate(-45deg);
+      }
+    }
+
+    /**
+     *
+     * P +---+
+     *   |   |
+     *   +---+
+     */
+    &.tether-element-attached-top.tether-element-attached-right.tether-target-attached-left :local(.popover) {
+      right: $arrow_size * 2;
+      top: -$arrow_size * 2 - $arrow_padding;
+      :local { animation-name: popoverRightLeft; }
+
+      :local(.arrow) {
+        right: -$arrow_size;
+        top: $arrow_size + $arrow_padding;
+        transform: rotate(-45deg);
+      }
+    }
+
+    /**
+     *   P
+     *   +---+
+     *   |   |
+     *   +---+
+     */
+    &.tether-element-attached-bottom.tether-element-attached-left.tether-target-attached-top :local(.popover) {
+      bottom: $arrow_size * 2;
+      left: -$arrow_size * 2 - $arrow_padding;
+      :local { animation-name: popoverBottomTop; }
+
+      :local(.arrow) {
+        bottom: -$arrow_size;
+        left: $arrow_size + $arrow_padding;
+        transform: rotate(45deg);
+      }
+    }
+
+    /**
+     *     P
+     *   +---+
+     *   |   |
+     *   +---+
+     */
+    &.tether-element-attached-bottom.tether-element-attached-center :local(.popover) {
+      bottom: $arrow_size * 2;
+      :local { animation-name: popoverBottomTop; }
+
+      :local(.arrow) {
+        bottom: -$arrow_size;
+        left: calc(50% - #{$arrow_size});
+        transform: rotate(45deg);
+      }
+    }
+
+    /**
+     *       P
+     *   +---+
+     *   |   |
+     *   +---+
+     */
+    &.tether-element-attached-bottom.tether-element-attached-right.tether-target-attached-top :local(.popover) {
+      bottom: $arrow_size * 2;
+      right: -$arrow_size * 2 - $arrow_padding;
+      :local { animation-name: popoverBottomTop; }
+
+      :local(.arrow) {
+        bottom: -$arrow_size;
+        right: $arrow_size + $arrow_padding;
+        transform: rotate(45deg);
+      }
+    }
+  }
+}

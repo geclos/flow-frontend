@@ -1,5 +1,8 @@
+import { API_LOCATION } from 'config/variables'
 import { withRouter } from 'react-router'
 import { observer } from 'mobx-react'
+import campaignMembers from 'stores/collections/campaignMembers'
+import campaigns from 'stores/collections/campaigns'
 import employees from 'stores/collections/employees'
 import ErrorFallback from 'components/ErrorFallback'
 import React, { Component } from 'react'
@@ -29,21 +32,26 @@ class Bootstrap extends Component<Props, State> {
     try {
       await Promise.all([
         users.fetch(),
-        employees.fetch()
+        employees.fetch(),
+        campaigns.fetch(),
+        campaignMembers.fetch()
       ])
-    } catch (error) {
-      console.error(error, JSON.stringify(error))
-      this.setState({ error: true })
-    } finally {
+
       this.setState({ loading: false })
+    } catch (e) {
+      if (e.status === 401) return window.location = API_LOCATION
+      else this.setState({ error: true })
     }
   }
 
   render () {
     const { children } = this.props
     const { loading, error } = this.state
+
     if (loading) return null
+
     if (error)  return <ErrorFallback />
+
     return children
   }
 }

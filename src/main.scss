@@ -12,3 +12,9 @@ html, body, #root {
   background: $grey5;
   height: 100%;
 }
+
+input {
+  &:placeholder {
+    color: $grey4;
+  }
+}

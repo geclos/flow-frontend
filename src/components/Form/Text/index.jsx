@@ -1,16 +1,16 @@
 // @flow
 import { LabeledInput } from 'components/Form'
-import { TextArea } from 'informed'
+import { Text } from 'informed'
 import * as React from 'react'
 
-import styles from './TextArea.module.scss'
+import styles from './Text.module.scss'
 
 type Props = {}
 
 export default function (props: Props) {
   return (
     <LabeledInput label={props.label}>
-      <TextArea {...props} className={styles.root} />
+      <Text {...props} className={styles.root} />
     </LabeledInput>
   )
 }

@@ -1,7 +1,7 @@
 // @flow
 import { API_LOCATION } from '../config/variables'
 import { apiClient } from 'mobx-rest'
-import jqueryAdapter from 'mobx-rest-jquery-adapter'
+import jqueryAdapter from './adapter'
 
 if (!API_LOCATION) {
   throw new Error('undefined API_LOCATION')
