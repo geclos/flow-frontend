@@ -1,8 +1,10 @@
 // @flow
 import { Portal } from 'react-portal'
+import { ReactComponent as CloseLogo } from 'icons/close.svg'
 import * as React from 'react'
 import $ from 'jquery'
 import autobind from 'autobind-decorator'
+import Icon from 'components/Icon'
 
 import styles from './Modal.module.scss'
 
@@ -40,10 +42,18 @@ export default class Modal extends React.Component<Props> {
   }
 
   render () {
+    const { close } = this.props
     return (
       <Portal node={document.body}>
         <div className={styles.background}>
           <div className={styles.modal}>
+            <div
+              role='button'
+              onClick={close}
+              className={styles.close}
+            >
+              <Icon Logo={CloseLogo} />
+            </div>
             {this.props.children}
           </div>
         </div>
