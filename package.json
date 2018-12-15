@@ -70,7 +70,8 @@
     "start": "PORT=3001 node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-    "flow": "flow"
+    "flow": "flow",
+    "icons": "node scripts/icons.js"
   },
   "husky": {
     "hooks": {
@@ -140,5 +141,8 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "devDependencies": {
+    "svgo": "^1.1.1"
   }
 }
