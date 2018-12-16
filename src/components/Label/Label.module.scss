@@ -1,0 +1,27 @@
+@import 'styles/colors';
+@import 'styles/fonts';
+
+.root {
+  border-radius: 5px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-align: center;
+  text-transform: uppercase;
+  display: inline-block;
+  border-radius: 30px;
+
+  &.medium {
+    @include font-size(6);
+    padding: 3px 15px;    
+  }
+
+  &.large {
+    @include font-size(5);
+    padding: 5px 15px;
+  }
+
+  &.brand {
+    background: rgba($brand, 0.1);
+    color: $brand;
+  }
+}

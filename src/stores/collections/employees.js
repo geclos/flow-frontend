@@ -1,5 +1,5 @@
 import { Collection } from 'mobx-rest'
-import Employee from '../models/Employee'
+import Employee from 'stores/models/Employee'
 
 class Employees extends Collection {
   url () {

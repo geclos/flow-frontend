@@ -1,6 +1,7 @@
 // @flow
-import autobind from 'autobind-decorator'
+import { observer } from 'mobx-react'
 import * as React from 'react'
+import autobind from 'autobind-decorator'
 
 type Props = {
   isOpened?: boolean,
@@ -11,6 +12,7 @@ type State = {
   isOpen: boolean
 }
 
+@observer
 class WithToggleState extends React.Component<Props, State> {
   state = {
     isOpen: this.props.isOpened || false

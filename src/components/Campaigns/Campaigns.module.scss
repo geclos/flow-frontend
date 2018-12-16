@@ -1,0 +1,24 @@
+.root {
+  .campaign {
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .addContainer {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 0 20px 0;
+  }
+
+  .btnContainer {
+    display: flex;
+    justify-content: center;
+
+    .btn {
+      max-width: 200px;
+    }
+  }
+}

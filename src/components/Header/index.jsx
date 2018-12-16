@@ -40,11 +40,6 @@ export default class Header extends Component {
           <div className={styles.content}>
             <div className={styles.navButtonContainer}>
               <NavButton exact to='/'>
-                Dashboard
-              </NavButton>
-            </div>
-            <div className={styles.navButtonContainer}>
-              <NavButton to='/employees'>
                 Employees
               </NavButton>
             </div>
