@@ -1,8 +1,8 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.11.0"
+lock "~> 3.17"
 
 set :application, "flow_frontend"
-set :repo_url, "git@gitlab.com:geclos/flow-frontend.git"
+set :repo_url, "git@github.com:geclos/flow-frontend.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -29,7 +29,7 @@ set :deploy_to, "/srv/frontend"
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
-# Default value for local_user is ENV['USER']
+# Default value for local_user is ENV['']
 # set :local_user, -> { `git config user.name`.chomp }
 
 # Default value for keep_releases is 5
@@ -37,6 +37,11 @@ set :deploy_to, "/srv/frontend"
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
+
+# nvm
+set :nvm_type, :user # or :system, depends on your nvm setup
+set :nvm_node, 'v16.17.0'
+set :nvm_map_bins, %w{node npm yarn}
 
 namespace :deploy do
   after :finishing, :build do

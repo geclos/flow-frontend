@@ -9,4 +9,6 @@ group :development do
   gem "capistrano", "~> 3.11"
   gem 'capistrano-nvm'
   gem 'capistrano-npm'
+  gem 'ed25519'
+  gem 'bcrypt_pbkdf'
 end
